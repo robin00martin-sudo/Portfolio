@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epreuve E5 - MARTIN Robin</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="icon" href="images/HK_icon.ico">
+  <script src="JS/side_menu.js"></script>
+  <script src="JS/lighBox.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="burger" onclick="toggleMenu()"> ☰ </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skill">Compétence</a></li>
+        <li><a href="#stage1">Stage 1</a></li>
+        <li><a href="#stage2">Stage 2</a></li>
+        <li><a href="#Projects">Projets</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ══ PRÉSENTATION E5 ══ -->
+  <section id="about">
+    <h2>Epreuve E5</h2>
+    <p>
+      L'épreuve E5 est une des épreuves du BTS SIO, elle doit être composée de minimum deux projets
+      ayant un contexte commun en rapport avec l'option choisie.
+      L'objectif de cette épreuve est d'évaluer le candidat sur une des deux situations professionnelles
+      qu'il aura réalisées sur les 2 ans de formation.
+      <br><br>
+      Cette épreuve est aussi accompagnée d'un tableau des compétences, compétences qui devront être
+      décrites et réalisées au cours des projets présentés.
+    </p>
+  </section>
+
+
+  <!-- ══ COMPÉTENCES ══ -->
+  <section id="skill">
+    <h2>Les compétences développées</h2>
+    <div class="skills-container">
+
+      <div class="skill">
+        <div class="skill-content">
+          <img src="images/check.png" alt="">
+          <span>Patrimoine informatique</span>
+        </div>
+        <div class="tooltip-content">Gestion et documentation des ressources informatiques.</div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-content">
+          <img src="images/check.png" alt="">
+          <span>Répondre aux incidents et aux demandes d'assistance</span>
+        </div>
+        <div class="tooltip-content">Assistance rapide aux utilisateurs et résolution des problèmes.</div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-content">
+          <img src="images/check.png" alt="">
+          <span>Développer la présence en ligne</span>
+        </div>
+        <div class="tooltip-content">Gestion et optimisation de la visibilité numérique.</div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-content">
+          <img src="images/check.png" alt="">
+          <span>Travailler en mode projet</span>
+        </div>
+        <div class="tooltip-content">Collaboration et suivi de projets structurés.</div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-content">
+          <img src="images/check.png" alt="">
+          <span>Mettre à disposition des utilisateurs un service informatique</span>
+        </div>
+        <div class="tooltip-content">Fournir un service fiable et accessible aux utilisateurs.</div>
+      </div>
+
+    </div>
+    <div class="download-zone ">
+      <a class="btn-download" href=" docs/stage/BTS SIO -Epreuve E5 - Tableau de synthese des compétences.pdf" download target="_blank"> Tableau des compétences</a>
+    </div>
+  </section>
+
+   <!-- == STAGES == -->
+  <section id="stage1">
+    <h2>Stage 1er année</h2>
+    <p>
+      Dans le cadre de ma formation de niveau BTS, 
+      j'ai effectué un stage d'une durée de trois semaines au sein du centre de formation GRETA de Bayonne. 
+      L'objectif principal de ce stage était de découvrir le métier de développeur web et de mettre en application mes compétences techniques dans un environnement professionnel réel.
+    </p>
+    <div class="download-zone">
+      <a class="btn-download" href="docs/stage/Rapport_stage_1.pdf" download target="_blank"> Rapport de stage</a>
+      <a class="btn-download" href="docs/stage/attestation_stage1.pdf" download target="_blank">Attestation de stage</a>
+    </div>
+  </section>
+
+  <section id="stage2">
+    <h2>Stage 2ème année</h2>
+    <p>
+      Dans la suite de ma formation, lors de ma seconde année de BTS, j'ai pu réaliser un stage de développement web effectué en télétravail sur une période de cinq semaines. Le projet consistait à concevoir et développer un site web professionnel pour une cliente souhaitant promouvoir son activité et ses services en ligne. Ce stage m'a permis de mettre en application mes compétences techniques dans un contexte professionnel réel, en travaillant de manière autonome tout en maintenant un suivi régulier avec ma tutrice de stage.
+    </p>
+    <div class="download-zone">   
+      <a class="btn-download" href="docs/stage/Rapport_stage_2.pdf" download target="_blank"> Rapport de stage</a>
+      <a class="btn-download" href="docs/stage/attestation_stage2.pdf" download target="_blank">Attestation de stage</a>
+    </div>
+  </section>
+
+  <!-- ══ PROJETS ══ -->
+  <section id="Projects">
+    <h2>Les Projets</h2>
+    <div class="projects-grid">
+
+      <div class="project-card" onclick="openModal('modal1')">
+        <h3> Calendrier</h3>
+        <p>Génération automatique de calendrier avec jours fériés</p>
+      </div>
+
+      <div class="project-card" onclick="openModal('modal2')">
+        <h3> Site vitrine</h3>
+        <p>Création d'un site web pour un particulier</p>
+      </div>
+      
+      <div class="project-card" onclick="openModal('modal3')">
+        <h3> Gestion role</h3>
+        <p>Création et gestion d'utilisateur</p>
+      </div>
+      
+      <div class="project-card" onclick="openModal('modal4')">
+      	<h3> CasZerne </h3>
+      	<p>Création de gestion des pompiers</p> 
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 - MARTIN Robin</p>
+  </footer>
+
+</body>
+
+<!-- ══════════════════════════════════════
+     MODAL 1 — Calendrier
+══════════════════════════════════════ -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+
+    <h2>Calendrier de jours fériés</h2>
+
+    <!-- GALERIE -->
+    <h4>Aperçu du projet</h4>
+    <div class="modal-gallery">
+      <img src="images/projets/calendrier_1.png" alt="Page d'accueil"     onclick="openLightbox(this.src)">
+      <img src="images/projets/calendrier_3.png" alt="Vue calendrier"     onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <h4>Présentation</h4>
+    <ul class="modal-desc">
+      <li>Projet réalisé au <strong>GRETA</strong> dans le cadre du BTS SIO — contexte professionnel réel.</li>
+      <li>Application web permettant de <strong>générer automatiquement un calendrier annuel</strong> intégrant les jours fériés français, calculés dynamiquement selon l'année choisie.</li>
+      <li>Chaque utilisateur peut personnaliser l'affichage et <strong>exporter le résultat en PDF</strong> directement depuis le navigateur, sans dépendance à une bibliothèque externe.</li>
+      <li>Les données des formations sont stockées en base SQL et administrables via un <strong>panneau de gestion</strong> dédié, permettant d'ajouter ou modifier les formations sans toucher au code.</li>
+    </ul>
+
+    <!-- FONCTIONNALITÉS -->
+    <h4>Fonctionnalités</h4>
+    <ul>
+      <li>Génération automatique du calendrier annuel avec jours fériés</li>
+      <li>Personnalisation de l'affichage par l'utilisateur</li>
+      <li>Export PDF depuis le navigateur</li>
+      <li>Panneau d'administration des formations</li>
+      <li>Stockage et lecture des données via base SQL</li>
+    </ul>
+
+    <!-- ARCHITECTURE -->
+    <h4>Architecture</h4>
+    <ul>
+      <li><strong>Front-end</strong> — affichage dynamique du calendrier en JavaScript, mise en page CSS responsive</li>
+      <li><strong>Back-end PHP</strong> — calcul des jours fériés, requêtes SQL, génération des données pour la vue</li>
+      <li><strong>Base de données SQL</strong> — stockage des formations et de leur planification</li>
+      <li><strong>Export PDF</strong> — déclenché côté navigateur via JavaScript</li>
+    </ul>
+
+    <!-- TECHNOLOGIES -->
+    <h4>Technologies</h4>
+    <div class="tags">
+      <span>PHP</span>
+      <span>JavaScript</span>
+      <span>CSS</span>
+      <span>HTML</span>
+      <span>SQL</span>
+    </div>
+
+    <!-- TÉLÉCHARGEMENTS -->
+    <div class="download-zone">
+      <a class="btn-download" href="docs/projets/calendar-app.zip" download>projet</a>
+      <a class="btn-download" href="docs/projets/doc_calendar_app.docx" download>documentation</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL 2 — Site vitrine
+══════════════════════════════════════ -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+
+    <h2>Site vitrine</h2>
+
+    <!-- GALERIE -->
+    <h4>Aperçu du projet</h4>
+    <div class="modal-gallery">
+      <img src="images/projets/vitrine_1.png" alt="Page d'accueil"   onclick="openLightbox(this.src)">
+      <img src="images/projets/vitrine_2.png" alt="Section services"  onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <h4>Présentation</h4>
+    <ul class="modal-desc">
+      <li>Site web réalisé pour un <strong>client particulier</strong> lors d'un stage — projet géré de A à Z avec recueil des besoins, développement itératif et validation client.</li>
+      <li>Conception complète : <strong>maquette, intégration HTML/CSS/JS/PHP</strong>, le tout selon le patron MVC pour séparer la logique métier de l'affichage.</li>
+      <li>Le site comprend une page d'accueil avec plusieurs sections thématiques ainsi qu'une <strong>page de contact</strong>.</li>
+      <li>Un module de <strong>prise de rendez-vous</strong> a été entièrement développé et testé, mais n'a finalement pas été mis en production à la demande du client.</li>
+    </ul>
+
+    <!-- FONCTIONNALITÉS -->
+    <h4>Fonctionnalités</h4>
+    <ul>
+      <li>Site de présentation moderne et responsive</li>
+      <li>Navigation fluide entre les sections</li>
+      <li>Module de prise de rendez-vous (développé, non déployé)</li>
+    </ul>
+
+    <!-- ARCHITECTURE -->
+    <h4>Architecture MVC</h4>
+    <ul>
+      <li><strong>Modèle</strong> — accès base de données, logique de traitement des formulaires</li>
+      <li><strong>Vue</strong> — templates HTML/CSS séparés du code métier, design responsive</li>
+      <li><strong>Contrôleur</strong> — gestion du routage et dispatch des actions utilisateur</li>
+      <li><strong>index.php</strong> — point d'entrée unique, dispatch via <code>?action=</code></li>
+    </ul>
+
+    <!-- TECHNOLOGIES -->
+    <h4>Technologies</h4>
+    <div class="tags">
+      <span>PHP</span>
+      <span>JavaScript</span>
+      <span>CSS</span>
+      <span>HTML</span>
+      <span>SQL</span>
+      <span>MVC</span>
+    </div>
+
+    <!-- TÉLÉCHARGEMENTS -->
+    <div class="download-zone">
+      <a class="btn-download" href="docs/projets/la_cabanne_des_5_elements.zip" download>projet</a>
+      <a class="btn-download" href="docs/projets/doc_cabanne_5_elements.docx" download>documentation</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL 3 — Gestion des rôles
+══════════════════════════════════════ -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+
+    <h2>Gestion des rôles utilisateurs</h2>
+
+    <!-- GALERIE -->
+    <h4>Aperçu du projet</h4>
+    <div class="modal-gallery">
+      <img src="images/projets/gestionrole_1.png" alt="Page de connexion"      onclick="openLightbox(this.src)">
+      <img src="images/projets/gestionrole_2.png" alt="Page d'inscription"     onclick="openLightbox(this.src)">
+      <img src="images/projets/gestionrole_3.png" alt="Affectation des rôles"  onclick="openLightbox(this.src)">
+      <img src="images/projets/gestionrole_4.png" alt="Liste des utilisateurs" onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <h4>Présentation</h4>
+    <ul class="modal-desc">
+      <li>Application web développée en <strong>PHP selon le patron MVC</strong> (Modèle – Vue – Contrôleur), structurée en trois couches bien séparées : <code>Modele/</code>, <code>vue/</code> et <code>controleur/</code>.</li>
+      <li>Permet la <strong>gestion complète des utilisateurs</strong> : inscription avec hashage du mot de passe (<code>password_hash</code>), authentification sécurisée, et déconnexion avec destruction de session.</li>
+      <li>Un administrateur peut <strong>créer des rôles</strong> (ex. : admin, user) et les <strong>affecter dynamiquement</strong> à chaque utilisateur via un formulaire dédié.</li>
+      <li>Toutes les interactions avec la base de données passent par des <strong>requêtes préparées PDO</strong>, protégeant l'application contre les injections SQL.</li>
+      <li>Le routage est centralisé dans le <code>controleurPrincipal</code> qui distribue les actions (connexion, inscription, liste, affectation) vers le bon contrôleur.</li>
+    </ul>
+
+    <!-- FONCTIONNALITÉS -->
+    <h4>Fonctionnalités</h4>
+    <ul>
+      <li>Inscription et connexion sécurisées avec hashage des mots de passe</li>
+      <li>Gestion de session PHP (connexion / déconnexion)</li>
+      <li>Création et liste des rôles</li>
+      <li>Affectation d'un rôle à un utilisateur</li>
+      <li>Liste de tous les utilisateurs enregistrés</li>
+    </ul>
+
+    <!-- ARCHITECTURE -->
+    <h4>Architecture MVC</h4>
+    <ul>
+      <li><strong>Modele/bd.inc.php</strong> — connexion PDO à la base de données</li>
+      <li><strong>controleur/</strong> — un fichier par action (connexion, inscription, rôle, affectation…)</li>
+      <li><strong>vue/</strong> — templates d'affichage HTML séparés du code métier</li>
+      <li><strong>index.php</strong> — point d'entrée unique, dispatch via <code>?action=</code></li>
+    </ul>
+
+    <!-- TECHNOLOGIES -->
+    <h4>Technologies</h4>
+    <div class="tags">
+      <span>PHP</span>
+      <span>CSS</span>
+      <span>HTML</span>
+      <span>MySQL</span>
+      <span>SQL</span>
+      <span>MVC</span>
+    </div>
+
+    <!-- TÉLÉCHARGEMENTS -->
+    <div class="download-zone">
+      <a class="btn-download" href="docs/projets/GestionRole.zip" download>projet</a>
+      <a class="btn-download" href="docs/projets/doc_gestion_role.docx" download>documentation</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL 4 — CasZerne
+══════════════════════════════════════ -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal4')">&times;</span>
+
+    <h2>CasZerne – Gestion d'une caserne de pompiers volontaires</h2>
+
+    <!-- GALERIE -->
+    <h4>Aperçu du projet</h4>
+    <div class="modal-gallery">
+      <img src="images/projets/caszerne_1.png" alt="Liste des pompiers volontaires"    onclick="openLightbox(this.src)">
+      <img src="images/projets/caszerne_2.png" alt="Détail d'une période de garde"     onclick="openLightbox(this.src)">
+      <img src="images/projets/caszerne_3.png" alt="Ajout d'une activité (disponibilité)" onclick="openLightbox(this.src)">
+      <img src="images/projets/caszerne_4.png" alt="Liste des périodes planifiées"     onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <h4>Présentation</h4>
+    <ul class="modal-desc">
+      <li>Application web développée en <strong>PHP orienté objet selon le patron MVC</strong>, structurée en trois couches bien séparées : <code>Core/</code> (modèle métier), <code>vue/</code> et <code>controleur/</code>.</li>
+      <li>Permet la <strong>gestion complète d'une caserne de pompiers volontaires</strong> : ajout/suppression de volontaires identifiés par leur numéro de BIP, planification de périodes de garde par tranche horaire (Matin, Après-midi, Nuit), et suivi du compteur de gardes effectuées.</li>
+      <li>Chaque volontaire peut se voir affecter une <strong>activité par période</strong> : Disponible, Missionné ou Absent, avec la possibilité de marquer s'il est effectivement de garde via la table <code>AVOIR_ACTIVITE</code>.</li>
+      <li>Toutes les interactions avec la base de données sont gérées par des <strong>classes DAO dédiées</strong> (<code>PompierDAO</code>, <code>PeriodeDAO</code>, <code>ActiviteDAO</code>) utilisant des <strong>requêtes préparées PDO</strong>, protégeant l'application contre les injections SQL.</li>
+      <li>Le routage est centralisé dans <code>controleurPrincipal</code> qui distribue les actions (liste, ajout, suppression, détail) vers le bon contrôleur via le paramètre <code>?action=</code> de l'URL.</li>
+    </ul>
+
+    <!-- FONCTIONNALITÉS -->
+    <h4>Fonctionnalités</h4>
+    <ul>
+      <li>Liste, ajout et suppression de pompiers volontaires</li>
+      <li>Fiche détail d'un pompier avec ses activités</li>
+      <li>Planification de périodes de garde (date + tranche horaire)</li>
+      <li>Affectation d'une disponibilité à chaque volontaire par période</li>
+      <li>Compteur de gardes effectuées mis à jour automatiquement</li>
+      <li>Suppression en cascade des activités liées à une période</li>
+    </ul>
+
+    <!-- ARCHITECTURE -->
+    <h4>Architecture MVC</h4>
+    <ul>
+      <li><strong>Core/</strong> — classes métier (<code>Pompier</code>, <code>Periode</code>, <code>Caserne</code>, <code>CollectionPompier</code>) et DAOs dans <code>Core/DAO/</code></li>
+      <li><strong>modele/Connexion.php</strong> — singleton PDO d'accès à la base de données</li>
+      <li><strong>controleur/</strong> — un fichier par action (listePompiers, ajouterPeriode, detailPeriode, ajouterActivite…)</li>
+      <li><strong>vue/</strong> — templates HTML d'affichage séparés du code métier</li>
+      <li><strong>index.php</strong> — point d'entrée unique, dispatch via <code>?action=</code></li>
+    </ul>
+
+    <!-- TECHNOLOGIES -->
+    <h4>Technologies</h4>
+    <div class="tags">
+      <span>PHP</span>
+      <span>CSS</span>
+      <span>MySQL</span>
+      <span>SQL</span>
+      <span>MVC</span>
+    </div>
+
+    <!-- TÉLÉCHARGEMENTS -->
+    <div class="download-zone">
+      <a class="btn-download" href="docs/projets/CasZerne.zip" download>projet</a>
+      <a class="btn-download" href="docs/projets/doc_caszerne.docx" download>documentation</a>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════
+     LIGHTBOX — zoom photo
+══════════════════════════════════════ -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Aperçu agrandi">
+</div>
+
+</html>
