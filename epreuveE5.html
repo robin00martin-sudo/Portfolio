@@ -138,19 +138,24 @@
       
       <div class="project-card" onclick="openModal('modal3')">
         <h3> Gestion role</h3>
-        <p>Création et gestion d'utilisateur</p>
+        <p>CRUD pour des utilisateur et leur rôle</p>
       </div>
       
       <div class="project-card" onclick="openModal('modal4')">
       	<h3> CasZerne </h3>
-      	<p>Création de gestion des pompiers</p> 
+      	<p>CRUD pour des pompiers</p> 
+      </div>
+      
+      <div class="project-card" onclick="openModal('modal5')">
+      	<h3> CasPitaine </h3>
+      	<p>Création et lecture de différent type de navires</p> 
       </div>
 
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 - MARTIN Robin</p>
+    <p>&copy; 2027 - MARTIN Robin</p>
   </footer>
 
 </body>
@@ -174,31 +179,29 @@
     <!-- DESCRIPTION -->
     <h4>Présentation</h4>
     <ul class="modal-desc">
-      <li>Projet réalisé au <strong>GRETA</strong> dans le cadre du BTS SIO — contexte professionnel réel.</li>
-      <li>Application web permettant de <strong>générer automatiquement un calendrier annuel</strong> intégrant les jours fériés français, calculés dynamiquement selon l'année choisie.</li>
-      <li>Chaque utilisateur peut personnaliser l'affichage et <strong>exporter le résultat en PDF</strong> directement depuis le navigateur, sans dépendance à une bibliothèque externe.</li>
-      <li>Les données des formations sont stockées en base SQL et administrables via un <strong>panneau de gestion</strong> dédié, permettant d'ajouter ou modifier les formations sans toucher au code.</li>
+      <li>Projet réalisé en <strong>autonomie au GRETA-CFA de Bayonne</strong> dans le cadre du BTS SIO : premier projet de développement web, volontairement construit sans framework.</li>
+      <li>Application web qui <strong>génère automatiquement un calendrier annuel sur trois années consécutives</strong> à partir d'une année de départ et d'une formation choisie dans une liste.</li>
+      <li>Les <strong>jours fériés français</strong> (8 fixes et les fériés liés à Pâques, calculés avec easter_date()) et les week-ends sont colorés automatiquement ; les années bissextiles sont gérées.</li>
+      <li>L'utilisateur peut <strong>sélectionner des jours d'un clic</strong> (surlignage violet) puis <strong>exporter le résultat en PDF</strong> A4 paysage, directement depuis le navigateur, avec les bibliothèques jsPDF et html2canvas.</li>
+      <li>La liste des formations est stockée en <strong>base MySQL</strong> et lue par des requêtes préparées PDO.</li>
     </ul>
-
     <!-- FONCTIONNALITÉS -->
     <h4>Fonctionnalités</h4>
     <ul>
-      <li>Génération automatique du calendrier annuel avec jours fériés</li>
-      <li>Personnalisation de l'affichage par l'utilisateur</li>
-      <li>Export PDF depuis le navigateur</li>
-      <li>Panneau d'administration des formations</li>
-      <li>Stockage et lecture des données via base SQL</li>
+      <li>Choix de l'année de départ et de la formation</li>
+      <li>Génération de 3 calendriers annuels avec fériés et week-ends</li>
+      <li>Sélection / désélection de jours par clic</li>
+      <li>Export PDF (un calendrier par page) avec indicateur de chargement</li>
+      <li>Navigation rapide entre les années</li>
     </ul>
-
     <!-- ARCHITECTURE -->
     <h4>Architecture</h4>
     <ul>
-      <li><strong>Front-end</strong> — affichage dynamique du calendrier en JavaScript, mise en page CSS responsive</li>
-      <li><strong>Back-end PHP</strong> — calcul des jours fériés, requêtes SQL, génération des données pour la vue</li>
-      <li><strong>Base de données SQL</strong> — stockage des formations et de leur planification</li>
-      <li><strong>Export PDF</strong> — déclenché côté navigateur via JavaScript</li>
+      <li><strong>Index.php</strong> — formulaire de saisie, lecture des formations en base</li>
+      <li><strong>calendrier.php</strong> — page de résultat, sélection de jours et export PDF (JavaScript)</li>
+      <li><strong>function_optimize.php</strong> — calcul de Pâques, des jours fériés et génération du tableau HTML</li>
+      <li><strong>Base MySQL</strong> — table <code>formations</code> (11 formations)</li>
     </ul>
-
     <!-- TECHNOLOGIES -->
     <h4>Technologies</h4>
     <div class="tags">
@@ -207,11 +210,13 @@
       <span>CSS</span>
       <span>HTML</span>
       <span>SQL</span>
-    </div>
+  <span>MySQL</span>
+  <span>jsPDF</span>
+      </div>
 
     <!-- TÉLÉCHARGEMENTS -->
     <div class="download-zone">
-      <a class="btn-download" href="docs/projets/calendar-app.zip" download>projet</a>
+      <a class="btn-download" href="https://github.com/robin00martin-sudo/calendrier" target="_blank" rel="noopener">projet</a>
       <a class="btn-download" href="docs/projets/doc_calendar_app.docx" download>documentation</a>
     </div>
 
@@ -237,29 +242,28 @@
     <!-- DESCRIPTION -->
     <h4>Présentation</h4>
     <ul class="modal-desc">
-      <li>Site web réalisé pour un <strong>client particulier</strong> lors d'un stage — projet géré de A à Z avec recueil des besoins, développement itératif et validation client.</li>
-      <li>Conception complète : <strong>maquette, intégration HTML/CSS/JS/PHP</strong>, le tout selon le patron MVC pour séparer la logique métier de l'affichage.</li>
-      <li>Le site comprend une page d'accueil avec plusieurs sections thématiques ainsi qu'une <strong>page de contact</strong>.</li>
-      <li>Un module de <strong>prise de rendez-vous</strong> a été entièrement développé et testé, mais n'a finalement pas été mis en production à la demande du client.</li>
+      <li>Site vitrine réalisé pour une <strong>cliente particulière</strong>, praticienne en shiatsu et réflexologie, lors du stage de 2<sup>e</sup> année (5 semaines en télétravail) : projet mené de A à Z avec recueil du besoin, maquette, intégration et validation par la cliente.</li>
+      <li>Site d'une page à six sections : <strong>accueil, présentation, parcours (frise chronologique), prestations, tarifs et contact</strong>, avec un menu latéral qui devient un menu burger sur écrans réduits.</li>
+      <li>Développé en <strong>PHP selon le patron MVC</strong> avec un contrôleur frontal, une couche DAO et un singleton PDO.</li>
+      <li>Un <strong>formulaire de contact</strong> envoie les messages par e-mail à la praticienne (elle peut répondre directement au visiteur).</li>
+      <li>Un module de <strong>prise de rendez-vous</strong> (créneaux de 30 minutes, enregistrement en base) a été développé et testé, mais n'a pas été mis en ligne à la demande de la cliente.</li>
     </ul>
-
     <!-- FONCTIONNALITÉS -->
     <h4>Fonctionnalités</h4>
     <ul>
-      <li>Site de présentation moderne et responsive</li>
-      <li>Navigation fluide entre les sections</li>
-      <li>Module de prise de rendez-vous (développé, non déployé)</li>
+      <li>Site de présentation responsive (menu burger, mise en page adaptative)</li>
+      <li>Navigation par ancres avec défilement doux</li>
+      <li>Tableau de tarifs et horaires d'ouverture</li>
+      <li>Formulaire de contact avec validation de l'e-mail</li>
+      <li>Module de rendez-vous : choix du service, de la date et d'un créneau libre (développé, non déployé)</li>
     </ul>
-
     <!-- ARCHITECTURE -->
     <h4>Architecture MVC</h4>
     <ul>
-      <li><strong>Modèle</strong> — accès base de données, logique de traitement des formulaires</li>
-      <li><strong>Vue</strong> — templates HTML/CSS séparés du code métier, design responsive</li>
-      <li><strong>Contrôleur</strong> — gestion du routage et dispatch des actions utilisateur</li>
-      <li><strong>index.php</strong> — point d'entrée unique, dispatch via <code>?action=</code></li>
+      <li><strong>Modèle</strong> — entités RendezVous et Service, DAO PDO, singleton <code>Database</code></li>
+      <li><strong>Vue</strong> — page vitrine, formulaire de rendez-vous, feuilles CSS et script du menu burger</li>
+      <li><strong>Contrôleur</strong> — Index.php et ControllerPrincipal</li>
     </ul>
-
     <!-- TECHNOLOGIES -->
     <h4>Technologies</h4>
     <div class="tags">
@@ -269,11 +273,12 @@
       <span>HTML</span>
       <span>SQL</span>
       <span>MVC</span>
-    </div>
+  <span>MySQL</span>
+      </div>
 
     <!-- TÉLÉCHARGEMENTS -->
     <div class="download-zone">
-      <a class="btn-download" href="docs/projets/la_cabanne_des_5_elements.zip" download>projet</a>
+      <a class="btn-download" href="https://github.com/robin00martin-sudo/laCabanneDes5Elements" target="_blank" rel="noopener">projet</a>
       <a class="btn-download" href="docs/projets/doc_cabanne_5_elements.docx" download>documentation</a>
     </div>
 
@@ -296,37 +301,37 @@
       <img src="images/projets/gestionrole_2.png" alt="Page d'inscription"     onclick="openLightbox(this.src)">
       <img src="images/projets/gestionrole_3.png" alt="Affectation des rôles"  onclick="openLightbox(this.src)">
       <img src="images/projets/gestionrole_4.png" alt="Liste des utilisateurs" onclick="openLightbox(this.src)">
+      <img src="images/projets/gestionrole_5.png" alt="Liste des rôles"        onclick="openLightbox(this.src)">
     </div>
 
     <!-- DESCRIPTION -->
     <h4>Présentation</h4>
     <ul class="modal-desc">
-      <li>Application web développée en <strong>PHP selon le patron MVC</strong> (Modèle – Vue – Contrôleur), structurée en trois couches bien séparées : <code>Modele/</code>, <code>vue/</code> et <code>controleur/</code>.</li>
-      <li>Permet la <strong>gestion complète des utilisateurs</strong> : inscription avec hashage du mot de passe (<code>password_hash</code>), authentification sécurisée, et déconnexion avec destruction de session.</li>
-      <li>Un administrateur peut <strong>créer des rôles</strong> (ex. : admin, user) et les <strong>affecter dynamiquement</strong> à chaque utilisateur via un formulaire dédié.</li>
-      <li>Toutes les interactions avec la base de données passent par des <strong>requêtes préparées PDO</strong>, protégeant l'application contre les injections SQL.</li>
-      <li>Le routage est centralisé dans le <code>controleurPrincipal</code> qui distribue les actions (connexion, inscription, liste, affectation) vers le bon contrôleur.</li>
+      <li>Application web développée en <strong>PHP selon le patron MVC</strong>, avec un contrôleur frontal (<code>index.php</code>) et trois couches séparées : <code>modele/</code>, <code>vue/</code> et <code>controleur/</code>.</li>
+      <li>Elle met en œuvre un <strong>contrôle d'accès par rôles (RBAC)</strong> : inscription avec hachage du mot de passe (<code>password_hash</code>), connexion, déconnexion avec destruction de la session, et écrans adaptés au rôle de la personne connectée.</li>
+      <li>Trois rôles sont prévus : <strong>admin</strong> (tous les droits, gestion des rôles et affectations), <strong>moderateur</strong> (ajout et suppression d'utilisateurs) et <strong>consultant</strong> (consultation).</li>
+      <li>Les droits sont vérifiés <strong>côté serveur</strong> dans chaque contrôleur, en plus du masquage des boutons dans les vues.</li>
+      <li>Toutes les requêtes passent par <strong>PDO avec requêtes préparées</strong> ; l'affectation d'un rôle et la suppression d'un utilisateur sont réalisées en <strong>transaction</strong>.</li>
     </ul>
-
     <!-- FONCTIONNALITÉS -->
     <h4>Fonctionnalités</h4>
     <ul>
-      <li>Inscription et connexion sécurisées avec hashage des mots de passe</li>
-      <li>Gestion de session PHP (connexion / déconnexion)</li>
+      <li>Inscription et connexion avec mots de passe hachés</li>
+      <li>Gestion de session et messages de retour (succès, erreur, accès refusé)</li>
+      <li>Liste et recherche des utilisateurs (login ou e-mail)</li>
+      <li>Ajout et suppression d'utilisateurs (impossible de supprimer son propre compte)</li>
       <li>Création et liste des rôles</li>
-      <li>Affectation d'un rôle à un utilisateur</li>
-      <li>Liste de tous les utilisateurs enregistrés</li>
+      <li>Affectation d'un rôle à un utilisateur (un seul rôle à la fois)</li>
+      <li>Menu dynamique selon le rôle</li>
     </ul>
-
     <!-- ARCHITECTURE -->
     <h4>Architecture MVC</h4>
     <ul>
-      <li><strong>Modele/bd.inc.php</strong> — connexion PDO à la base de données</li>
-      <li><strong>controleur/</strong> — un fichier par action (connexion, inscription, rôle, affectation…)</li>
-      <li><strong>vue/</strong> — templates d'affichage HTML séparés du code métier</li>
-      <li><strong>index.php</strong> — point d'entrée unique, dispatch via <code>?action=</code></li>
+      <li><strong>modele/</strong> — connexion PDO (<code>bd.inc.php</code>), authentification, utilisateurs, rôles</li>
+      <li><strong>controleur/</strong> — <code>controleurprincipal</code> (routage <code>?action=</code>), <code>verifAcces</code> (contrôle des droits) et un fichier par action</li>
+      <li><strong>vue/</strong> — gabarit commun (<code>entete</code> / <code>pied</code>) et templates d'affichage</li>
+      <li><strong>Base MySQL</strong> — tables <code>utilisateur</code>, <code>role</code> et <code>utilisateur_role</code> (clés étrangères avec cascade)</li>
     </ul>
-
     <!-- TECHNOLOGIES -->
     <h4>Technologies</h4>
     <div class="tags">
@@ -340,7 +345,7 @@
 
     <!-- TÉLÉCHARGEMENTS -->
     <div class="download-zone">
-      <a class="btn-download" href="docs/projets/GestionRole.zip" download>projet</a>
+      <a class="btn-download" href="https://github.com/robin00martin-sudo/gestionRole" target="_blank" rel="noopener">projet</a>
       <a class="btn-download" href="docs/projets/doc_gestion_role.docx" download>documentation</a>
     </div>
 
@@ -368,48 +373,122 @@
     <!-- DESCRIPTION -->
     <h4>Présentation</h4>
     <ul class="modal-desc">
-      <li>Application web développée en <strong>PHP orienté objet selon le patron MVC</strong>, structurée en trois couches bien séparées : <code>Core/</code> (modèle métier), <code>vue/</code> et <code>controleur/</code>.</li>
-      <li>Permet la <strong>gestion complète d'une caserne de pompiers volontaires</strong> : ajout/suppression de volontaires identifiés par leur numéro de BIP, planification de périodes de garde par tranche horaire (Matin, Après-midi, Nuit), et suivi du compteur de gardes effectuées.</li>
-      <li>Chaque volontaire peut se voir affecter une <strong>activité par période</strong> : Disponible, Missionné ou Absent, avec la possibilité de marquer s'il est effectivement de garde via la table <code>AVOIR_ACTIVITE</code>.</li>
-      <li>Toutes les interactions avec la base de données sont gérées par des <strong>classes DAO dédiées</strong> (<code>PompierDAO</code>, <code>PeriodeDAO</code>, <code>ActiviteDAO</code>) utilisant des <strong>requêtes préparées PDO</strong>, protégeant l'application contre les injections SQL.</li>
-      <li>Le routage est centralisé dans <code>controleurPrincipal</code> qui distribue les actions (liste, ajout, suppression, détail) vers le bon contrôleur via le paramètre <code>?action=</code> de l'URL.</li>
+      <li>Application web développée en <strong>PHP orienté objet selon le patron MVC</strong>, avec une couche métier (<code>Core/</code>), des classes <strong>DAO</strong> et un <strong>singleton PDO</strong> pour la connexion.</li>
+      <li>Elle gère une <strong>caserne de pompiers volontaires</strong> : enregistrement des volontaires identifiés par leur numéro de BIP, et planification de <strong>périodes de garde</strong> (une date associée à une tranche : Matin, Après-midi ou Nuit) avec un nombre de pompiers requis.</li>
+      <li>Pour chaque période, on affecte à un volontaire une <strong>disponibilité</strong> (Disponible, Missionné ou Absent) et on indique s'il est effectivement de garde ; un indicateur affiche si l'effectif de la période est <strong>complet ou incomplet</strong>.</li>
+      <li>Les requêtes passent par des <strong>DAO</strong> (<code>PompierDAO</code>, <code>PeriodeDAO</code>, <code>ActiviteDAO</code>) en <strong>requêtes préparées PDO</strong> ; l'intégrité est assurée par des clés primaires composites et des suppressions en cascade.</li>
+      <li>Le routage est centralisé dans <code>controleurPrincipal</code> via le paramètre <code>?action=</code>.</li>
     </ul>
-
     <!-- FONCTIONNALITÉS -->
     <h4>Fonctionnalités</h4>
     <ul>
-      <li>Liste, ajout et suppression de pompiers volontaires</li>
-      <li>Fiche détail d'un pompier avec ses activités</li>
-      <li>Planification de périodes de garde (date + tranche horaire)</li>
-      <li>Affectation d'une disponibilité à chaque volontaire par période</li>
-      <li>Compteur de gardes effectuées mis à jour automatiquement</li>
-      <li>Suppression en cascade des activités liées à une période</li>
+      <li>Liste, ajout (BIP contrôlé et unique), fiche et suppression des pompiers</li>
+      <li>Liste, planification, détail et suppression des périodes de garde</li>
+      <li>Affectation d'une disponibilité à un volontaire pour une période, et retrait</li>
+      <li>Indicateur d'effectif « x / y » complet ou incomplet</li>
+      <li>Compteur de gardes incrémenté à chaque affectation « de garde »</li>
+      <li>Suppression en cascade des activités liées à une période ou à un pompier</li>
     </ul>
-
     <!-- ARCHITECTURE -->
     <h4>Architecture MVC</h4>
     <ul>
-      <li><strong>Core/</strong> — classes métier (<code>Pompier</code>, <code>Periode</code>, <code>Caserne</code>, <code>CollectionPompier</code>) et DAOs dans <code>Core/DAO/</code></li>
+      <li><strong>Core/</strong> — classes métier (<code>Pompier</code>, <code>Periode</code>, <code>Caserne</code>, <code>CollectionPompier</code>) et DAO dans <code>Core/DAO/</code></li>
       <li><strong>modele/Connexion.php</strong> — singleton PDO d'accès à la base de données</li>
       <li><strong>controleur/</strong> — un fichier par action (listePompiers, ajouterPeriode, detailPeriode, ajouterActivite…)</li>
-      <li><strong>vue/</strong> — templates HTML d'affichage séparés du code métier</li>
-      <li><strong>index.php</strong> — point d'entrée unique, dispatch via <code>?action=</code></li>
+      <li><strong>vue/</strong> — gabarit commun (en-tête, pied) et templates d'affichage</li>
+      <li><strong>Base MySQL</strong> — 5 tables : <code>VOLONTAIRE</code>, <code>TRANCHE</code>, <code>DISPONIBILITE</code>, <code>PERIODE_GARDE</code>, <code>AVOIR_ACTIVITE</code></li>
     </ul>
-
     <!-- TECHNOLOGIES -->
     <h4>Technologies</h4>
     <div class="tags">
       <span>PHP</span>
       <span>CSS</span>
+      <span>HTML</span>
+      <span>SQL</span>
+      <span>MVC</span>
+  <span>MySQL</span>
+  <span>POO</span>
+      </div>
+
+    <!-- TÉLÉCHARGEMENTS -->
+    <div class="download-zone">
+      <a class="btn-download" href="https://github.com/robin00martin-sudo/casZerne" target="_blank" rel="noopener">projet</a>
+      <a class="btn-download" href="docs/projets/doc_caszerne.docx" download>documentation</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL 5 — CasPitaine
+══════════════════════════════════════ -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal5')">&times;</span>
+
+    <h2>CasPitaine — Catalogue de bateaux</h2>
+
+    <!-- GALERIE -->
+    <h4>Aperçu du projet</h4>
+    <div class="modal-gallery">
+      <img src="images/projets/bateauxVoyage.png" alt="Brochure des bateaux voyageurs" onclick="openLightbox(this.src)">
+      <img src="images/projets/bateauFret.png" alt="Liste des bateaux de fret"      onclick="openLightbox(this.src)">
+      <img src="images/projets/ajoutBateaux.png" alt="Formulaire d'ajout d'un bateau" onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <h4>Présentation</h4>
+    <ul class="modal-desc">
+      <li>Application web développée en <strong>PHP orienté objet selon le patron MVC</strong>, structurée en <code>core/</code> (classes métier et DAO), <code>vue/</code> et <code>Controleur/</code>.</li>
+      <li>Elle remplace une brochure PDF statique par des <strong>pages web dynamiques</strong> présentant deux types de bateaux : les <strong>bateaux voyageurs</strong> (image, dimensions, vitesse, équipements) et les <strong>bateaux de fret</strong> (dimensions, poids maximum).</li>
+      <li>Le modèle objet met en œuvre l'<strong>héritage</strong> (classe abstraite <code>Bateau</code> et ses classes filles), la <strong>composition</strong> (équipements d'un voyageur) et une classe de <strong>collection</strong>.</li>
+      <li>Un formulaire permet d'<strong>ajouter un bateau</strong> des deux types avec validation côté serveur : nom unique, formats numériques, image vérifiée par son contenu (JPEG/PNG/GIF/WebP, 2 Mo max), enregistrement dans une <strong>transaction</strong>.</li>
+      <li>Les requêtes sont des <strong>requêtes préparées PDO</strong> ; les erreurs techniques sont journalisées côté serveur et jamais affichées à l'utilisateur.</li>
+      <li>Le routage est centralisé dans <code>controleurPrincipal::dispatcher()</code>, qui distribue vers le bon contrôleur selon le paramètre <code>?page=</code>.</li>
+    </ul>
+    <!-- FONCTIONNALITÉS -->
+    <h4>Fonctionnalités</h4>
+    <ul>
+      <li>Consultation de la brochure des bateaux voyageurs (image, dimensions, vitesse, équipements)</li>
+      <li>Consultation de la liste des bateaux de fret (dimensions, poids maximum)</li>
+      <li>Ajout d'un bateau voyageur ou de fret via un formulaire dynamique</li>
+      <li>Envoi et stockage sécurisé de l'image du bateau</li>
+      <li>Association d'équipements aux bateaux voyageurs</li>
+      <li>Gestion des erreurs avec codes HTTP adaptés (413, 422, 500)</li>
+    </ul>
+    <!-- ARCHITECTURE -->
+    <h4>Architecture MVC</h4>
+    <ul>
+      <li><strong>modele/Connexion.php</strong> — instance PDO unique (singleton)</li>
+      <li><strong>core/Metier/</strong> — classes métier : <code>Bateau</code>, <code>BateauVoyageur</code>, <code>BateauFret</code>, <code>Equipement</code>, <code>Collection</code></li>
+      <li><strong>core/DAO/</strong> — accès aux données : <code>BateauDAO</code>, <code>BateauVoyageurDAO</code>, <code>BateauFretDAO</code>, <code>EquipementDAO</code></li>
+      <li><strong>Controleur/</strong> — un contrôleur par action (voyage, fret, ajout) ; le principal gère l'aiguillage</li>
+      <li><strong>vue/</strong> — gabarit commun et templates (bateaux voyageurs, fret, formulaire d'ajout)</li>
+      <li><strong>index.php</strong> — point d'entrée unique, aiguillage via <code>?page=</code></li>
+    </ul>
+    <!-- MODÈLE DE DONNÉES -->
+    <h4>Modèle de données</h4>
+    <ul>
+      <li><strong>BATEAU</strong> — table unique pour les deux types ; colonne <code>type</code> (<code>'v'</code> ou <code>'f'</code>) comme discriminant</li>
+      <li><strong>EQUIPEMENT</strong> — équipements disponibles (Accès handicapé, Bar, Pont promenade, Salon vidéo)</li>
+      <li><strong>POSSEDER</strong> — association (0,n)–(0,n) entre bateaux voyageurs et équipements</li>
+    </ul>
+    <!-- TECHNOLOGIES -->
+    <h4>Technologies</h4>
+    <div class="tags">
+      <span>PHP</span>
       <span>MySQL</span>
       <span>SQL</span>
       <span>MVC</span>
+      <span>POO</span>
+      <span>HTML</span>
+      <span>CSS</span>
     </div>
 
     <!-- TÉLÉCHARGEMENTS -->
     <div class="download-zone">
-      <a class="btn-download" href="docs/projets/CasZerne.zip" download>projet</a>
-      <a class="btn-download" href="docs/projets/doc_caszerne.docx" download>documentation</a>
+      <a class="btn-download" href="https://github.com/robin00martin-sudo/casPitaine" target="_blank" rel="noopener">projet</a>
+      <a class="btn-download" href="docs/projets/doc_casPitaine.docx" download>documentation</a>
     </div>
 
   </div>
