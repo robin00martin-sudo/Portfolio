@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <title>Portfolio - MARTIN Robin</title>
-  <link rel="icon" href="images/HK_icon.ico">
+  <link rel="icon" href="images/HK_image/Void_Heart.webp">
   <link rel="stylesheet" href="CSS/style.css">
   <script src="JS/side_menu.js"></script>
 </head>
@@ -13,12 +15,18 @@
 <body>
   <header id="home">
     <div class="burger" onclick="toggleMenu()">☰</div>
-    <h1 class="text-flicker-in-glow">Robin Martin</h1>
-    <p>Étudiant en BTS SIO - Option SLAM</p>
+    <h1><img class="header-title" src="images/HK_image/header_titre-1400.png"
+           srcset="images/HK_image/header_titre-800.png 800w, 
+                   images/HK_image/header_titre-1400.png 1400w,
+                   images/HK_image/header_titre.png 1937w"
+           sizes="(max-width: 700px) 92vw, 900px"
+           width="1937" height="582"
+           alt="Robin Martin - Étudiant en BTS SIO - Option SLAM"></h1>
   </header>
   
   <aside class="sidebar" id="sidebar">
-    <nav>
+    <nav class="hk-toc">
+      <div class="toctitle"><h2>Sommaire</h2></div>
       <ul class="nav-links">
         <li><a href="#home">Accueil</a></li>
         <li><a href="#about">À propos</a></li>
@@ -34,14 +42,13 @@
     <span></span>
     <span></span>
   </div>
-</section>
 
   <section id="about">
     <h2>À propos de moi</h2>
     <p>Salut, je m'appelle Robin MARTIN
       Je suis actuellement étudiant au lycée Louis de Foix à Bayonne en seconde année de <B>BTS SIO</B> (Services Informatiques aux Organisations)
        dans <b>l'option SLAM</b> (Solutions Logicielles et Application Métier) qui en gros est une option spécialisée pour le développement.
-    </br>
+    <br>
        Actuellement toujours en cours d'étude, 
        je vous propose sur ce portfolio de retrouver ci-dessous les différentes études, et projet que j'ai pu entreprendre au sein de ma carrière.
     </p>
@@ -50,9 +57,7 @@
     </div>		
   </section>
 
-</br>
-
-  <section id="about">
+  <section id="bts-sio">
       <h2>Qu'est-ce que le BTS SIO ?</h2>
       <p>Le <b>BTS SIO</b> (Services Informatiques aux Organisations) est un diplôme
           de niveau Bac+2. Il forme des experts en informatique, compétents aussi bien en
@@ -88,8 +93,8 @@
               </ul>
             </div>
           </div>
-  	</div>
-  	
+  </section>
+
   <section>
   <h2>LANGUAGE APPRIS</h2>
   <div class="skills-container">
@@ -98,7 +103,7 @@
         <img src="images/lang/html5.svg" alt="HTML5">
         <span>HTML5</span>
       </div>
-      <div class="tooltip-content" class="flip-vertical-left">Langage de structuration web</div>
+      <div class="tooltip-content">Langage de structuration web</div>
     </div>
 
     <div class="skill">
@@ -213,7 +218,6 @@
 
     </div>
   </section>
-  </section>
 
   <section id="stage">
     <h2>Stages</h2>
@@ -262,16 +266,16 @@
         <p>64600 Anglet France</p>
       </div>
       <div class="info-box">
-      	<div class="icon"><img src="images/contact/insta.png "></div>
+      	<div class="icon"><img src="images/contact/insta.png"></div>
       	<h3>Instagram</h3>
-      	<p>r0bin_mr<p>
+      	<p>r0bin_mr</p>
+      </div>
     </div>
   </section>
-  
-</body>
 
   <footer>
     <p>&copy; 2027 - MARTIN Robin</p>
   </footer>
-  
+</body>
+
 </html>
