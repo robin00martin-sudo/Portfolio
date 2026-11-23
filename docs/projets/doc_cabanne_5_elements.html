@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation technique – La Cabane des 5 éléments – Site vitrine</title>
+<style>:root{--bg:#fff;--fg:#1f2933;--muted:#5b6770;--line:#d9e0e6;--soft:#f5f8fa;--acc:#1f6fb2;--acc2:#1f3a5f;--code-bg:#f3f4f6;--code-fg:#a31515;
+--info:#eaf3fb;--info-b:#2e75b6;--warn:#fff4e5;--warn-b:#d98200;--bad:#fdecec;--bad-b:#c0392b;--ok:#eaf6ec;--ok-b:#2e7d32;--toc-w:290px}
+@media (prefers-color-scheme:dark){:root{--bg:#10151b;--fg:#e4e9ee;--muted:#9aa7b2;--line:#2a3541;--soft:#171e26;--acc:#6db3f2;--acc2:#9cc9f5;--code-bg:#0b0f14;--code-fg:#ffb4a8;
+--info:#14263a;--warn:#33250f;--bad:#3a1a1a;--ok:#14301b}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.toc{position:fixed;inset:0 auto 0 0;width:var(--toc-w);overflow:auto;padding:22px 18px;background:var(--soft);border-right:1px solid var(--line);font-size:14px}
+.toc .back{display:inline-block;margin-bottom:14px;color:var(--acc);text-decoration:none;font-weight:600}
+.toc-title{font-weight:700;color:var(--acc2);margin-bottom:10px;line-height:1.3}
+.toc ol{list-style:none;margin:0;padding:0}.toc li{margin:2px 0}.toc li.l2{padding-left:14px;font-size:13px}
+.toc a{display:block;padding:3px 8px;border-radius:6px;color:var(--fg);text-decoration:none;border-left:3px solid transparent}
+.toc a:hover{background:var(--line)}.toc a.active{border-left-color:var(--acc);background:var(--line);font-weight:600}
+.toc-toggle{display:none}
+main{margin-left:var(--toc-w);max-width:980px;padding:36px 44px 60px}
+.hero{border-bottom:3px solid var(--acc);padding-bottom:18px;margin-bottom:26px}
+.kicker{margin:0;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--acc)}
+h1{font-size:2.2rem;line-height:1.2;margin:.2em 0;color:var(--acc2)}.subtitle{color:var(--muted);font-size:1.15rem;margin:.2em 0 1em}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px 22px;margin:0}
+.meta div{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.meta dt{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.meta dd{margin:2px 0 0;font-weight:600}
+main > h1{font-size:1.65rem;margin-top:2.2em;padding-bottom:.25em;border-bottom:1px solid var(--line)}
+h2{font-size:1.3rem;color:var(--acc);margin-top:1.8em}h3{font-size:1.08rem;color:var(--acc2);margin-top:1.4em}
+.anchor{opacity:0;margin-left:-1.1em;padding-right:.4em;color:var(--muted);text-decoration:none;font-weight:400}
+h1:hover .anchor,h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:.7em 0}ul,ol{padding-left:1.4em}li{margin:.25em 0}
+code{font:.88em ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;background:var(--code-bg);color:var(--code-fg);padding:.1em .35em;border-radius:4px}
+figure.code{margin:1em 0;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:6px;background:var(--code-bg);overflow:hidden}
+figcaption{font-size:12px;font-style:italic;color:var(--muted);padding:6px 14px 0}
+pre{margin:0;padding:10px 14px;overflow:auto}pre code{background:none;color:var(--fg);padding:0;font-size:.83rem;line-height:1.5;white-space:pre}
+.tablewrap{overflow-x:auto;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th{background:var(--acc2);color:#fff;text-align:left;padding:8px 10px;white-space:nowrap}
+@media (prefers-color-scheme:dark){th{background:#24456b}}
+td{padding:7px 10px;border-top:1px solid var(--line);vertical-align:top}tbody tr:nth-child(even){background:var(--soft)}
+.callout{margin:1.1em 0;padding:10px 16px;border-radius:8px;border:1px solid var(--line);border-left-width:5px}
+.callout-title{font-weight:700;margin-bottom:2px}.callout p{margin:.4em 0}
+.callout.info{background:var(--info);border-left-color:var(--info-b)}.callout.info .callout-title{color:var(--info-b)}
+.callout.warn{background:var(--warn);border-left-color:var(--warn-b)}.callout.warn .callout-title{color:var(--warn-b)}
+.callout.bad{background:var(--bad);border-left-color:var(--bad-b)}.callout.bad .callout-title{color:var(--bad-b)}
+.callout.ok{background:var(--ok);border-left-color:var(--ok-b)}.callout.ok .callout-title{color:var(--ok-b)}
+footer{margin-top:3em;padding-top:1em;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media (max-width:900px){
+ .toc{transform:translateX(-100%);transition:transform .25s;z-index:20;box-shadow:0 0 24px rgba(0,0,0,.3)}.toc.open{transform:none}
+ .toc-toggle{display:block;position:fixed;top:10px;left:10px;z-index:30;background:var(--acc2);color:#fff;border:0;border-radius:8px;padding:8px 12px;font:600 14px system-ui}
+ main{margin-left:0;padding:60px 16px 40px}h1{font-size:1.7rem}}
+@media print{.toc,.toc-toggle{display:none}main{margin:0;max-width:none;padding:0}
+ :root{--bg:#fff;--fg:#000;--soft:#fff;--code-bg:#f5f5f5;--code-fg:#900;--line:#bbb}
+ th{background:#444!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ h1,h2,h3{break-after:avoid}figure,table,.callout{break-inside:avoid}.anchor{display:none}a{color:inherit}}
+</style>
+</head>
+<body>
+<button class="toc-toggle" aria-label="Afficher le sommaire" aria-expanded="false">☰ Sommaire</button>
+<nav class="toc" aria-label="Sommaire">
+  <a class="back" href="../../epreuveE5.html">← Dossier E5</a>
+  <div class="toc-title">La Cabane des 5 éléments – Site vitrine</div>
+  <ol><li class="l1"><a href="#1-presentation-du-projet">1. Présentation du projet</a></li><li class="l1"><a href="#2-fonctionnalites">2. Fonctionnalités</a></li><li class="l2"><a href="#2-1-site-public-actif">2.1 Site public </a></li><li class="l2"><a href="#2-2-navigation">2.2 Navigation</a></li><li class="l2"><a href="#2-3-formulaire-de-contact-actif">2.3 Formulaire de contact</a></li><li class="l2"><a href="#2-4-module-de-rendez-vous-desactive-sur-le-site">2.4 Module de rendez-vous (désactivé sur le site)</a></li><li class="l1"><a href="#3-architecture-mvc">3. Architecture MVC</a></li><li class="l1"><a href="#4-base-de-donnees-module-de-rendez-vous">4. Base de données (module de rendez-vous)</a></li><li class="l2"><a href="#4-1-tables">4.1 Tables</a></li><li class="l1"><a href="#5-detail-du-code">5. Détail du code</a></li><li class="l2"><a href="#5-1-configuration">5.1 Configuration</a></li>
+  <li class="l2"><a href="#5-2-couche-metier">5.2 Couche métier</a></li><li class="l2"><a href="#5-3-couche-dao">5.3 Couche DAO</a></li><li class="l2"><a href="#5-4-controleur-de-rendez-vous-regles-verifiees-cote-serveur">5.4 Contrôleur de rendez-vous : règles vérifiées côté serveur</a></li><li class="l2"><a href="#5-5-formulaire-de-contact-contactcontroller">5.5 Formulaire de contact – ContactController</a></li>
+</nav>
+<main>
+  <header class="hero">
+    <p class="kicker">Documentation technique</p>
+    <h1>La Cabane des 5 éléments – Site vitrine</h1>
+    <p class="subtitle">Site vitrine MVC PHP avec formulaire de contact et module de rendez-vous</p>
+    <dl class="meta"><div><dt>Dépôt GitHub</dt><dd>github.com/robin00martin-sudo/laCabanneDes5Elements</dd></div><div><dt>Contexte</dt><dd>Stage de 2e année – 5 semaines en télétravail – cliente particulière</dd></div><div><dt>Type</dt><dd>Site vitrine PHP en MVC (page principale + 2 modules)</dd></div><div><dt>Technologies</dt><dd>PHP, HTML, CSS, JavaScript, MySQL (PDO), mail()</dd></div><div><dt>Auteur</dt><dd>MARTIN Robin</dd></div></dl>
+  </header>
+  <h1 id="1-presentation-du-projet"><a class="anchor" href="#1-presentation-du-projet">#</a>1. Présentation du projet</h1>
+<p><strong>La Cabane des 5 éléments</strong> est un <strong>site vitrine</strong> réalisé pour une cliente particulière, praticienne en shiatsu et en réflexologie, lors du stage de deuxième année (cinq semaines, en télétravail, avec un suivi régulier par la tutrice de stage). Le site présente la praticienne, son lieu de soin, son parcours, ses prestations, ses tarifs, ses horaires et ses moyens de contact.</p>
+<p>Le projet a été mené de bout en bout : <strong>recueil du besoin, maquette, intégration, développement et validation par la cliente</strong>. L'architecture suit le patron <strong>MVC</strong> en PHP. Deux modules dynamiques complètent la page statique :</p>
+<ul><li>un <strong>formulaire de contact</strong> qui envoie un e-mail à la praticienne (actif) ;</li><li>un <strong>module de prise de rendez-vous</strong> avec créneaux, enregistrement en base et confirmation, <strong>développé et testé mais désactivé à la demande de la cliente</strong> (le lien d'accès est commenté dans le menu).</li></ul>
+<p>Cette documentation décrit la <strong>version corrigée</strong> du dépôt. Pour respecter la vie privée de la cliente, ses coordonnées personnelles ne sont pas reproduites ici.</p>
+<h1 id="2-fonctionnalites"><a class="anchor" href="#2-fonctionnalites">#</a>2. Fonctionnalités</h1>
+<h2 id="2-1-site-public-actif"><a class="anchor" href="#2-1-site-public-actif">#</a>2.1 Site public (actif)</h2>
+<div class="tablewrap"><table><thead><tr><th>Section (<code>id</code>)</th><th>Contenu</th><th>Particularités techniques</th></tr></thead><tbody><tr><td>Accueil (<code>#home</code>)</td><td>Bandeau d'accroche sur image de fond.</td><td>Calque sombre ; indicateur de défilement animé (<code>@keyframes chevronFlow</code>).</td></tr><tr><td>Présentation (<code>#about</code>)</td><td>Portrait et présentation ; photo et description du lieu.</td><td>Colonnes flexibles (<code>.columns</code>) → une colonne sous 786 px.</td></tr><tr><td>Parcours (<code>#path</code>)</td><td>Introduction et <strong>frise chronologique</strong>.</td><td>Composant <code>timeline</code> (points, blocs de contenu).</td></tr><tr><td>Prestations (<code>#offers</code>)</td><td>Réflexologie plantaire, shiatsu, Gua Sha ; contre-indications ; effets secondaires.</td><td>Titres, listes, encadré <code>note</code>.</td></tr><tr><td>Tarifs (<code>#prix</code>)</td><td>Tableau des soins, packs et séances ; offre ; tarifs étudiants.</td><td>Tableau HTML, colonne <code>prix</code> alignée.</td></tr><tr><td>Contact (<code>#contact</code>)</td><td>Coordonnées, réseaux sociaux, horaires, formulaire.</td><td>Cartes en grille de 3 colonnes ; horaires et formulaire côte à côte.</td></tr></tbody></table></div>
+<h2 id="2-2-navigation"><a class="anchor" href="#2-2-navigation">#</a>2.2 Navigation</h2>
+<p>Le menu est un <strong>panneau latéral</strong> (<code>&lt;aside class="sidebar"&gt;</code>, 220 px, fixé à gauche) <strong>visible en permanence sur grand écran</strong>. Sous <strong>1450 px</strong> de large, il est masqué hors de l'écran (<code>transform: translateX(-100%)</code>) et un <strong>bouton burger</strong> « ☰ » apparaît pour le faire glisser (classe <code>active</code>). Liens d'ancre vers chaque section avec défilement doux (<code>scroll-behavior: smooth</code>) ; fermeture au clic en dehors du panneau.</p>
+<h2 id="2-3-formulaire-de-contact-actif"><a class="anchor" href="#2-3-formulaire-de-contact-actif">#</a>2.3 Formulaire de contact (actif)</h2>
+<ul><li>Validation du nom, de l'e-mail et du message ; envoi d'un e-mail à la praticienne (<code>Reply-To</code> = visiteur).</li><li><strong>Retour visuel</strong> après envoi : message de succès ou d'erreur dans la section Contact (plus de page blanche).</li><li><strong>Anti-spam</strong> : champ piège invisible, limitation à un message toutes les 30 secondes, jeton anti-CSRF.</li></ul>
+<h2 id="2-4-module-de-rendez-vous-desactive-sur-le-site"><a class="anchor" href="#2-4-module-de-rendez-vous-desactive-sur-le-site">#</a>2.4 Module de rendez-vous (désactivé sur le site)</h2>
+<ul><li>Choix d'une <strong>prestation</strong> (la durée du soin en dépend) et d'une <strong>date</strong>.</li><li><strong>Créneaux calculés</strong> d'après les <strong>horaires d'ouverture réels</strong> et la durée du soin : un rendez-vous doit se terminer avant la fermeture ; les créneaux passés ou chevauchant un rendez-vous existant sont grisés.</li><li>Saisie du <strong>nom, de l'e-mail</strong>, du téléphone (facultatif), d'un message et d'un <strong>consentement</strong> (RGPD).</li><li>Enregistrement <strong>atomique</strong> (aucune double réservation), statut <code>en_attente</code>, <strong>page de confirmation</strong>, <strong>notification</strong> par e-mail à la praticienne.</li><li>Activation : décommenter la ligne 28 de <code>view/mainPage.php</code> (lien <code>index.php?action=RDV</code>).</li></ul>
+<h1 id="3-architecture-mvc"><a class="anchor" href="#3-architecture-mvc">#</a>3. Architecture MVC</h1>
+<figure class="code"><figcaption>Structure du dépôt corrigé</figcaption><pre><code>laCabanneDes5Elements/
+├── index.php                         Point d'entrée : fuseau, session, CSRF, routage
+├── bdd.sql                           Schéma + prestations (rejouable)
+├── config.example.php  .gitignore    Configuration locale (config.local.php ignoré par Git)
+├── config/
+│   ├── Config.php                    Lecture de la configuration
+│   └── Database.php                  Singleton PDO
+├── controller/
+│   ├── ControllerPrincipal.php       Aiguillage (switch sur l'action)
+│   ├── mainPageController.php        Page vitrine
+│   ├── RendezVousController.php      Formulaire, enregistrement, confirmation, notification
+│   ├── ContactController.php         Formulaire de contact
+│   └── securite.php                  csrfToken(), csrfChamp(), verifierCsrf(), h()
+├── model/
+│   ├── metier/  RendezVous  Service  Horaires  CreneauIndisponibleException
+│   └── dao/     RendezVousDAO  ServiceDAO
+├── view/
+│   ├── mainPage.php                  Page vitrine
+│   ├── rdv/  form.php  confirmation.php
+│   ├── css/  styleMainPage.css  styleForm.css
+│   └── JS/menuBurger.js
+└── images/                           Médias optimisés</code></pre></figure>
+<div class="tablewrap"><table><thead><tr><th>Couche</th><th>Fichiers</th><th>Rôle</th></tr></thead><tbody><tr><td>Contrôleur</td><td><code>ControllerPrincipal</code>, <code>mainPageController</code>, <code>RendezVousController</code>, <code>ContactController</code></td><td>Recevoir l'action, valider, préparer les données, choisir la vue.</td></tr><tr><td>Modèle – métier</td><td><code>RendezVous</code>, <code>Service</code>, <code>Horaires</code></td><td>Objets du domaine et règles d'horaires.</td></tr><tr><td>Modèle – données</td><td><code>RendezVousDAO</code>, <code>ServiceDAO</code>, <code>Database</code></td><td>Toutes les requêtes SQL.</td></tr><tr><td>Vue</td><td><code>mainPage.php</code>, <code>rdv/*.php</code></td><td>Affichage ; la vue de rendez-vous n'affiche que les variables reçues.</td></tr></tbody></table></div>
+<h1 id="4-base-de-donnees-module-de-rendez-vous"><a class="anchor" href="#4-base-de-donnees-module-de-rendez-vous">#</a>4. Base de données (module de rendez-vous)</h1>
+<h2 id="4-1-tables"><a class="anchor" href="#4-1-tables">#</a>4.1 Tables</h2>
+<div class="tablewrap"><table><thead><tr><th>Table</th><th>Colonne</th><th>Type</th><th>Contrainte / rôle</th></tr></thead><tbody><tr><td><code>service</code></td><td><code>idService</code></td><td>INT AI</td><td>PK.</td></tr><tr><td></td><td><code>nomService</code></td><td>VARCHAR(50) NOT NULL</td><td>Libellé de la prestation.</td></tr><tr><td></td><td><code>duree</code></td><td>INT NOT NULL</td><td>Durée du soin en <strong>minutes</strong>.</td></tr><tr><td></td><td><code>description</code></td><td>VARCHAR(4096) NOT NULL</td><td>Texte libre (vide dans le jeu de données).</td></tr><tr><td><code>rendezvous</code></td><td><code>idRdv</code></td><td>INT AI</td><td>PK.</td></tr><tr><td></td><td><code>date_rdv</code></td><td>DATE NOT NULL</td><td>Jour (index <code>idx_rdv_date</code>).</td></tr><tr><td></td><td><code>heure_rdv</code>, <code>heure_fin</code></td><td>TIME NOT NULL</td><td>Début, et fin = début + durée ; <code>CHECK (heure_fin &gt; heure_rdv)</code>.</td></tr><tr><td></td><td><code>statut</code></td><td>VARCHAR(20) NOT NULL</td><td><code>en_attente</code> (défaut), <code>confirmé</code>, <code>annulé</code> ; <code>CHECK</code> sur ces valeurs.</td></tr><tr><td></td><td><code>nom_client</code>, <code>email_client</code></td><td>VARCHAR(100), VARCHAR(150) NOT NULL</td><td>Identité du client.</td></tr><tr><td></td><td><code>telephone</code></td><td>VARCHAR(20) NULL</td><td>Facultatif.</td></tr><tr><td></td><td><code>message</code></td><td>VARCHAR(1000) NOT NULL</td><td>Message facultatif.</td></tr><tr><td></td><td><code>idService</code></td><td>INT NOT NULL</td><td>FK → <code>service(idService)</code>.</td></tr><tr><td></td><td><code>cree_le</code></td><td>DATETIME</td><td><code>DEFAULT CURRENT_TIMESTAMP</code>.</td></tr></tbody></table></div>
+<p>Le script <code>bdd.sql</code> est <strong>rejouable</strong> et crée la base. Jeu de données : Réflexologie plantaire (75 min), Réflexologie plantaire, palmaire et crânienne (90), Shiatsu (90), Mixte shiatsu et réflexologie (115). Il n'est pas synchronisé avec la page « Tarifs » (qui propose d'autres prestations) : à compléter si le module est activé.</p>
+<h1 id="5-detail-du-code"><a class="anchor" href="#5-detail-du-code">#</a>5. Détail du code</h1>
+<h2 id="5-1-configuration"><a class="anchor" href="#5-1-configuration">#</a>5.1 Configuration</h2>
+<p><code>Config::all()</code> lit <code>config.local.php</code> (ignoré par Git) ou les variables d'environnement <code>DB_HOST</code>, <code>DB_PORT</code>, <code>DB_NAME</code>, <code>DB_USER</code>, <code>DB_PASS</code>, <code>MAIL_TO</code>, <code>MAIL_FROM</code> ; <code>Config::get($cle)</code> renvoie une valeur. <code>Database::getConnexion()</code> est un <strong>singleton</strong> PDO (<code>utf8mb4</code>, <code>ERRMODE_EXCEPTION</code>). Les chemins sont écrits avec des <strong><code>/</code></strong> (valides sous Windows et Linux).</p>
+
+<h2 id="5-2-couche-metier"><a class="anchor" href="#5-2-couche-metier">#</a>5.2 Couche métier</h2>
+<div class="tablewrap"><table><thead><tr><th>Classe</th><th>Contenu</th></tr></thead><tbody><tr><td><code>Service</code></td><td><code>idService</code>, <code>nomService</code>, <code>description</code>, <code>duree</code> (minutes), accesseurs et mutateurs typés.</td></tr><tr><td><code>RendezVous</code></td><td>Constantes <strong><code>STATUT_EN_ATTENTE</code></strong>, <code>STATUT_CONFIRME</code>, <code>STATUT_ANNULE</code> (une seule graphie) ; attributs <code>dateRdv</code>, <code>heureRdv</code>, <code>statut</code>, <code>message</code>, <code>service</code>, <strong><code>nomClient</code>, <code>emailClient</code>, <code>telephone</code></strong> ; méthodes <code>confirmer()</code> et <code>annuler()</code>.</td></tr><tr><td><code>Horaires</code></td><td><code>PLAGES</code> (lundi 10h30–18h00 ; mardi 10h30–13h30 et 15h30–19h30 ; mercredi 10h00–14h00 ; jeudi fermé ; vendredi 10h30–19h00 ; samedi 10h00–14h00 ; dimanche fermé), <code>PAS</code> (30 min). <code>dateValide()</code>, <code>plagesDuJour()</code>, <strong><code>creneauxPossibles($date, $duree)</code></strong> (débuts toutes les 30 min dans une plage, si le soin finit avant la fermeture), <code>heureFin()</code>, <strong><code>chevauche($debut, $fin, $existants)</code></strong>.</td></tr><tr><td><code>CreneauIndisponibleException</code></td><td>Levée par le DAO quand le créneau chevauche un rendez-vous.</td></tr></tbody></table></div>
+<p>Les horaires de <code>Horaires::PLAGES</code> doivent rester cohérents avec ceux affichés dans la section Contact.</p>
+<figure class="code"><figcaption>Horaires : créneaux et chevauchement</figcaption><pre><code>// Mercredi 10h00–14h00, Shiatsu (90 min) → débuts : 10:00 10:30 11:00 11:30 12:00 12:30
+while ((clone $debut)-&gt;modify("+$dureeMinutes minutes") &lt;= $limite) { $creneaux[] = …; $debut-&gt;modify('+30 minutes'); }
+
+// Deux intervalles se chevauchent si chacun commence avant la fin de l'autre
+if ($debut &lt; $rdv['heure_fin'] &amp;&amp; $fin &gt; $rdv['heure_rdv']) { return true; }</code></pre></figure>
+
+<h2 id="5-3-couche-dao"><a class="anchor" href="#5-3-couche-dao">#</a>5.3 Couche DAO</h2>
+<div class="tablewrap"><table><thead><tr><th>Méthode</th><th>Traitement</th></tr></thead><tbody><tr><td><code>RendezVousDAO::create(RendezVous)</code></td><td>Calcule <code>heure_fin</code> ; <code>GET_LOCK('cabane_rdv', 10)</code> ; transaction ; relit les rendez-vous du jour (<code>findDuJour</code>) ; si chevauchement : <code>rollBack</code> + <code>CreneauIndisponibleException</code> ; sinon <code>INSERT</code> préparé (identité du client comprise) ; <code>commit</code> ; <code>RELEASE_LOCK</code> dans le <code>finally</code>.</td></tr><tr><td><code>RendezVousDAO::findDuJour($date)</code></td><td><code>SELECT heure_rdv, heure_fin … WHERE date_rdv = ? AND statut &lt;&gt; 'annulé'</code>.</td></tr><tr><td><code>RendezVousDAO::findAll()</code></td><td>Tous les rendez-vous (futur tableau d'administration).</td></tr><tr><td><code>ServiceDAO::findAll / findById / create / update / delete</code></td><td>Gestion des prestations (requêtes préparées, objets <code>Service</code>).</td></tr></tbody></table></div>
+
+<h2 id="5-4-controleur-de-rendez-vous-regles-verifiees-cote-serveur"><a class="anchor" href="#5-4-controleur-de-rendez-vous-regles-verifiees-cote-serveur">#</a>5.4 Contrôleur de rendez-vous : règles vérifiées côté serveur</h2>
+<div class="tablewrap"><table><thead><tr><th>Contrôle</th><th>Message / réponse</th></tr></thead><tbody><tr><td>Service existant</td><td>« Veuillez choisir une prestation. »</td></tr><tr><td>Date réelle et non passée</td><td>« La date choisie est invalide ou passée. »</td></tr><tr><td>Créneau dans <code>creneauxPossibles()</code> (jour ouvert, dans une plage, fin avant fermeture)</td><td>« Ce créneau n'est pas proposé… »</td></tr><tr><td>Créneau non passé</td><td>« Ce créneau est déjà passé. »</td></tr><tr><td>Nom (≤ 100), e-mail valide (≤ 150), téléphone <code>/^[0-9+().\s-]{6,20}$/</code>, message ≤ 1000</td><td>Messages dédiés.</td></tr><tr><td><strong>Consentement</strong> coché</td><td>« Vous devez accepter l'utilisation de vos informations… »</td></tr><tr><td>Disponibilité à l'instant T (verrou + chevauchement)</td><td>HTTP <strong>409</strong> « Ce créneau vient d'être réservé… »</td></tr><tr><td>Base inaccessible</td><td>HTTP 500, message générique, détail dans <code>error_log</code>.</td></tr></tbody></table></div>
+
+<h2 id="5-5-formulaire-de-contact-contactcontroller"><a class="anchor" href="#5-5-formulaire-de-contact-contactcontroller">#</a>5.5 Formulaire de contact – ContactController</h2>
+<div class="tablewrap"><table><thead><tr><th>Étape</th><th>Traitement</th></tr></thead><tbody><tr><td>Méthode</td><td>Autre que POST : réponse <strong>405</strong>.</td></tr><tr><td>Anti-spam n°1</td><td>Champ piège <code>site_web</code> (invisible) rempli : réponse « ok » <strong>silencieuse</strong>, rien n'est envoyé.</td></tr><tr><td>Anti-spam n°2</td><td>Moins de 30 s depuis le dernier envoi (session) : <code>contact=trop_rapide</code>.</td></tr><tr><td>Validation</td><td>Nom ≤ 100, message ≤ 5000, e-mail <code>FILTER_VALIDATE_EMAIL</code> ; sinon <code>contact=invalide</code>.</td></tr><tr><td>Configuration</td><td><code>mail_to</code> vide : erreur journalisée, <code>contact=erreur</code>.</td></tr><tr><td>Envoi</td><td><code>mail()</code> ; en-têtes <code>From</code> (configurable), <code>Reply-To</code> = e-mail du visiteur, <code>Content-Type: text/plain; charset=UTF-8</code>. Le nom n'est <strong>jamais</strong> placé dans les en-têtes (pas d'injection).</td></tr><tr><td>Retour</td><td>Redirection <code>index.php?contact=&lt;statut&gt;#contact</code> ; la page vitrine affiche le message correspondant (<code>ok</code>, <code>invalide</code>, <code>trop_rapide</code>, <code>erreur</code>).</td></tr></tbody></table></div>
+
+<footer>MARTIN Robin – BTS SIO – Épreuve E5</footer>
+</main>
+<script>(function(){
+var toc=document.querySelector('.toc'),btn=document.querySelector('.toc-toggle');
+btn.addEventListener('click',function(){var o=toc.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+toc.addEventListener('click',function(e){if(e.target.tagName==='A')toc.classList.remove('open')});
+var links=[].slice.call(toc.querySelectorAll('a[href^="#"]')),map={};
+links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+if('IntersectionObserver' in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('active')});
+  var a=map[e.target.id];if(a){a.classList.add('active');a.scrollIntoView({block:'nearest'})}}})},{rootMargin:'0px 0px -75% 0px'});
+ document.querySelectorAll('main h1[id],main h2[id]').forEach(function(h){if(map[h.id])io.observe(h)});
+}})();
+</script>
+</body>
+</html>

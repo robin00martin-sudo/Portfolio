@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation technique – Calendrier de jours fériés</title>
+<style>:root{--bg:#fff;--fg:#1f2933;--muted:#5b6770;--line:#d9e0e6;--soft:#f5f8fa;--acc:#1f6fb2;--acc2:#1f3a5f;--code-bg:#f3f4f6;--code-fg:#a31515;
+--info:#eaf3fb;--info-b:#2e75b6;--warn:#fff4e5;--warn-b:#d98200;--bad:#fdecec;--bad-b:#c0392b;--ok:#eaf6ec;--ok-b:#2e7d32;--toc-w:290px}
+@media (prefers-color-scheme:dark){:root{--bg:#10151b;--fg:#e4e9ee;--muted:#9aa7b2;--line:#2a3541;--soft:#171e26;--acc:#6db3f2;--acc2:#9cc9f5;--code-bg:#0b0f14;--code-fg:#ffb4a8;
+--info:#14263a;--warn:#33250f;--bad:#3a1a1a;--ok:#14301b}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.toc{position:fixed;inset:0 auto 0 0;width:var(--toc-w);overflow:auto;padding:22px 18px;background:var(--soft);border-right:1px solid var(--line);font-size:14px}
+.toc .back{display:inline-block;margin-bottom:14px;color:var(--acc);text-decoration:none;font-weight:600}
+.toc-title{font-weight:700;color:var(--acc2);margin-bottom:10px;line-height:1.3}
+.toc ol{list-style:none;margin:0;padding:0}.toc li{margin:2px 0}.toc li.l2{padding-left:14px;font-size:13px}
+.toc a{display:block;padding:3px 8px;border-radius:6px;color:var(--fg);text-decoration:none;border-left:3px solid transparent}
+.toc a:hover{background:var(--line)}.toc a.active{border-left-color:var(--acc);background:var(--line);font-weight:600}
+.toc-toggle{display:none}
+main{margin-left:var(--toc-w);max-width:980px;padding:36px 44px 60px}
+.hero{border-bottom:3px solid var(--acc);padding-bottom:18px;margin-bottom:26px}
+.kicker{margin:0;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--acc)}
+h1{font-size:2.2rem;line-height:1.2;margin:.2em 0;color:var(--acc2)}.subtitle{color:var(--muted);font-size:1.15rem;margin:.2em 0 1em}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px 22px;margin:0}
+.meta div{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.meta dt{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.meta dd{margin:2px 0 0;font-weight:600}
+main > h1{font-size:1.65rem;margin-top:2.2em;padding-bottom:.25em;border-bottom:1px solid var(--line)}
+h2{font-size:1.3rem;color:var(--acc);margin-top:1.8em}h3{font-size:1.08rem;color:var(--acc2);margin-top:1.4em}
+.anchor{opacity:0;margin-left:-1.1em;padding-right:.4em;color:var(--muted);text-decoration:none;font-weight:400}
+h1:hover .anchor,h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:.7em 0}ul,ol{padding-left:1.4em}li{margin:.25em 0}
+code{font:.88em ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;background:var(--code-bg);color:var(--code-fg);padding:.1em .35em;border-radius:4px}
+figure.code{margin:1em 0;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:6px;background:var(--code-bg);overflow:hidden}
+figcaption{font-size:12px;font-style:italic;color:var(--muted);padding:6px 14px 0}
+pre{margin:0;padding:10px 14px;overflow:auto}pre code{background:none;color:var(--fg);padding:0;font-size:.83rem;line-height:1.5;white-space:pre}
+.tablewrap{overflow-x:auto;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th{background:var(--acc2);color:#fff;text-align:left;padding:8px 10px;white-space:nowrap}
+@media (prefers-color-scheme:dark){th{background:#24456b}}
+td{padding:7px 10px;border-top:1px solid var(--line);vertical-align:top}tbody tr:nth-child(even){background:var(--soft)}
+.callout{margin:1.1em 0;padding:10px 16px;border-radius:8px;border:1px solid var(--line);border-left-width:5px}
+.callout-title{font-weight:700;margin-bottom:2px}.callout p{margin:.4em 0}
+.callout.info{background:var(--info);border-left-color:var(--info-b)}.callout.info .callout-title{color:var(--info-b)}
+.callout.warn{background:var(--warn);border-left-color:var(--warn-b)}.callout.warn .callout-title{color:var(--warn-b)}
+.callout.bad{background:var(--bad);border-left-color:var(--bad-b)}.callout.bad .callout-title{color:var(--bad-b)}
+.callout.ok{background:var(--ok);border-left-color:var(--ok-b)}.callout.ok .callout-title{color:var(--ok-b)}
+footer{margin-top:3em;padding-top:1em;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media (max-width:900px){
+ .toc{transform:translateX(-100%);transition:transform .25s;z-index:20;box-shadow:0 0 24px rgba(0,0,0,.3)}.toc.open{transform:none}
+ .toc-toggle{display:block;position:fixed;top:10px;left:10px;z-index:30;background:var(--acc2);color:#fff;border:0;border-radius:8px;padding:8px 12px;font:600 14px system-ui}
+ main{margin-left:0;padding:60px 16px 40px}h1{font-size:1.7rem}}
+@media print{.toc,.toc-toggle{display:none}main{margin:0;max-width:none;padding:0}
+ :root{--bg:#fff;--fg:#000;--soft:#fff;--code-bg:#f5f5f5;--code-fg:#900;--line:#bbb}
+ th{background:#444!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ h1,h2,h3{break-after:avoid}figure,table,.callout{break-inside:avoid}.anchor{display:none}a{color:inherit}}
+</style>
+</head>
+<body>
+<button class="toc-toggle" aria-label="Afficher le sommaire" aria-expanded="false">☰ Sommaire</button>
+<nav class="toc" aria-label="Sommaire">
+  <a class="back" href="../../epreuveE5.html">← Dossier E5</a>
+  <div class="toc-title">Calendrier de jours fériés</div>
+  <ol><li class="l1"><a href="#1-presentation-du-projet">1. Présentation du projet</a></li><li class="l2"><a href="#1-1-besoin-metier">1.1 Besoin métier</a></li><li class="l1"><a href="#2-fonctionnalites">2. Fonctionnalités</a></li><li class="l1"><a href="#3-architecture-et-role-des-fichiers">3. Architecture et rôle des fichiers</a></li><li class="l1"><a href="#4-base-de-donnees">4. Base de données</a></li><li class="l2"><a href="#4-1-table-formations">4.1 Table <code>formations</code></a></li><li class="l2"><a href="#4-2-jeu-de-donnees-10-formations">4.2 Jeu de données (10 formations)</a></li><li class="l1"><a href="#5-detail-du-code">5. Détail du code</a></li><li class="l2"><a href="#5-1-connexion-config-php">5.1 Connexion – config.php</a></li><li class="l2"><a href="#5-2-function-optimize-php">5.2 function_optimize.php</a></li><li class="l2"><a href="#5-3-index-php">5.3 index.php</a></li><li class="l2"><a href="#5-4-calendrier-php">5.4 calendrier.php</a></li><li class="l2"><a href="#5-5-selection-de-jours">5.5 Sélection de jours</a></li><li class="l2"><a href="#5-6-export-pdf">5.6 Export PDF</a></li></ol>
+</nav>
+<main>
+  <header class="hero">
+    <p class="kicker">Documentation technique</p>
+    <h1>Calendrier de jours fériés</h1>
+    <p class="subtitle">Génération automatique de calendriers annuels – GRETA-CFA Bayonne</p>
+    <dl class="meta"><div><dt>Dépôt GitHub</dt><dd>github.com/robin00martin-sudo/calendrier</dd></div><div><dt>Contexte</dt><dd>Projet en autonomie, GRETA-CFA Bayonne – BTS SIO</dd></div><div><dt>Type</dt><dd>Application web PHP procédurale</dd></div><div><dt>Technologies</dt><dd>PHP, MySQL (PDO), HTML, CSS, JavaScript, jsPDF, html2canvas</dd></div><div><dt>Auteur</dt><dd>MARTIN Robin</dd></div></dl>
+  </header>
+  <h1 id="1-presentation-du-projet"><a class="anchor" href="#1-presentation-du-projet">#</a>1. Présentation du projet</h1>
+<p>Le projet <strong>Calendrier</strong> est une application web PHP réalisée au GRETA-CFA de Bayonne, en autonomie, comme premier projet de développement web. Il <strong>génère un calendrier annuel à la française sur trois années consécutives</strong> à partir d'une année de départ, en respectant les <strong>jours fériés fixes et mobiles</strong>, le rattache à une <strong>formation</strong> stockée en base de données, permet de <strong>surligner en violet</strong> des journées sélectionnées et d'<strong>exporter le résultat en PDF</strong>.</p>
+<p>Le projet reste volontairement simple (pas de framework, PHP et JavaScript dans les mêmes fichiers). Cette documentation décrit la <strong>version corrigée</strong> du dépôt.</p>
+<h2 id="1-1-besoin-metier"><a class="anchor" href="#1-1-besoin-metier">#</a>1.1 Besoin métier</h2>
+<ul><li>Produire un planning annuel imprimable pour chaque formation du centre (CAP, BTS, titres professionnels, diplômes d'État).</li><li>Afficher automatiquement les jours fériés français, sans saisie manuelle.</li><li>Permettre de marquer des périodes (vacances, examens, stages…) sur le calendrier avant impression.</li><li>Fournir un PDF prêt à diffuser (un calendrier par page, A4 paysage).</li></ul>
+<h1 id="2-fonctionnalites"><a class="anchor" href="#2-fonctionnalites">#</a>2. Fonctionnalités</h1>
+<div class="tablewrap"><table><thead><tr><th>Fonctionnalité</th><th>Description</th><th>Où</th></tr></thead><tbody><tr><td>Choix de l'année et de la formation</td><td>Formulaire GET ; l'année est limitée à la plage supportée par PHP (voir 5.2) ; la liste vient de la table <code>formations</code>.</td><td><code>index.php</code></td></tr><tr><td>Validation serveur</td><td>Année hors plage ou non numérique, formation absente ou inconnue : retour à l'accueil avec un message explicite.</td><td><code>calendrier.php</code></td></tr><tr><td>Génération sur 3 ans</td><td>Boucle <code>for ($year = $startYear; $year &lt;= $startYear + 2; $year++)</code>.</td><td><code>calendrier.php</code></td></tr><tr><td>Jours fériés</td><td>11 dates par an : 8 fixes et 3 mobiles (lundi de Pâques, Ascension, lundi de Pentecôte).</td><td><code>function_optimize.php</code></td></tr><tr><td>Week-ends</td><td>Samedis et dimanches colorés (classe <code>weekend</code>).</td><td><code>function_optimize.php</code></td></tr><tr><td>Sélection de jours</td><td>Clic sur une cellule : les 3 cellules du jour passent en violet ; second clic = désélection. Les jours inexistants (30 février…) ne sont pas cliquables.</td><td>JS de <code>calendrier.php</code></td></tr><tr><td>Export PDF</td><td>Capture de chaque calendrier puis assemblage dans un PDF A4 paysage.</td><td>JS <code>exportCalendarsToPDF()</code></td></tr><tr><td>Navigation</td><td>Barre fixe avec ancres vers chaque année, retour accueil, bouton Télécharger.</td><td><code>calendrier.php</code></td></tr></tbody></table></div>
+<h1 id="3-architecture-et-role-des-fichiers"><a class="anchor" href="#3-architecture-et-role-des-fichiers">#</a>3. Architecture et rôle des fichiers</h1>
+<figure class="code"><figcaption>Structure du dépôt corrigé</figcaption><pre><code>calendrier/
+├── index.php                 Accueil : formulaire année + formation
+├── calendrier.php            Résultat : validation, 3 calendriers, sélection, export PDF
+├── function_optimize.php     Plage d'années, Pâques, jours fériés, génération du tableau
+├── config.php                getDb() : connexion PDO unique
+├── config.example.php        Modèle de configuration (à copier en config.local.php)
+├── .gitignore                Ignore config.local.php (identifiants jamais publiés)
+├── formations.sql            Base + table + 10 formations (script rejouable)
+├── styleIndex.css            Style de l'accueil
+├── styleCalendrier.css       Style de la page calendrier
+├── fond.jpg                  Image de fond de l'accueil (43 Ko)
+└── README.md</code></pre></figure>
+<div class="tablewrap"><table><thead><tr><th>Fichier</th><th>Rôle</th></tr></thead><tbody><tr><td><code>index.php</code></td><td>Lit les formations, calcule l'année par défaut, affiche le formulaire et les messages d'erreur (<code>?erreur=annee</code> ou <code>?erreur=formation</code>).</td></tr><tr><td><code>calendrier.php</code></td><td>Valide les paramètres, charge la formation, inclut le CSS, génère les calendriers, porte le JavaScript (sélection et export).</td></tr><tr><td><code>function_optimize.php</code></td><td><code>anneeMin()</code>, <code>anneeMax()</code>, <code>lireAnnee()</code>, <code>paques()</code>, <code>addDaysToPaques()</code>, <code>jours_feries()</code>, <code>generateCalendarAnnuaire()</code>.</td></tr><tr><td><code>config.php</code></td><td><code>getDb()</code> : lit <code>config.local.php</code> ou les variables d'environnement <code>DB_*</code>, crée le PDO une seule fois (<code>static</code>).</td></tr><tr><td><code>formations.sql</code></td><td>Crée la base <code>formation</code>, la table <code>formations</code> (clé auto-incrémentée, intitulé unique) et le jeu de données.</td></tr></tbody></table></div>
+<h1 id="4-base-de-donnees"><a class="anchor" href="#4-base-de-donnees">#</a>4. Base de données</h1>
+<h2 id="4-1-table-formations"><a class="anchor" href="#4-1-table-formations">#</a>4.1 Table <code>formations</code></h2>
+<div class="tablewrap"><table><thead><tr><th>Colonne</th><th>Type</th><th>Contrainte</th><th>Utilisation</th></tr></thead><tbody><tr><td><code>id</code></td><td>INT</td><td>PRIMARY KEY, <strong>AUTO_INCREMENT</strong></td><td>Identifiant transmis dans l'URL (<code>formation=</code>).</td></tr><tr><td><code>intitule</code></td><td>VARCHAR(255)</td><td>NOT NULL, <strong>UNIQUE</strong> (<code>uq_formations_intitule</code>)</td><td>Libellé affiché dans la liste et en titre de chaque calendrier.</td></tr><tr><td><code>niveau</code></td><td>VARCHAR(100)</td><td>NULL</td><td>Niveau de la formation (renseigné dans le jeu de données).</td></tr></tbody></table></div>
+<p>Moteur <strong>InnoDB</strong>. Le script est <strong>rejouable</strong> (<code>DROP TABLE IF EXISTS</code>) et crée la base (<code>CREATE DATABASE IF NOT EXISTS formation</code>).</p>
+<h2 id="4-2-jeu-de-donnees-10-formations"><a class="anchor" href="#4-2-jeu-de-donnees-10-formations">#</a>4.2 Jeu de données (10 formations)</h2>
+<div class="tablewrap"><table><thead><tr><th>id</th><th>Intitulé</th><th>Niveau</th></tr></thead><tbody><tr><td>1</td><td>CAP Accompagnant éducatif petite enfance</td><td>CAP</td></tr><tr><td>2</td><td>Titre professionnel Commis de cuisine</td><td>Titre Professionnel</td></tr><tr><td>4</td><td>BTS Services informatiques aux organisations (SISR)</td><td>Bac+2</td></tr><tr><td>5</td><td>Titre professionnel Développeur intégrateur web</td><td>Titre Professionnel Niveau 5</td></tr><tr><td>6</td><td>CAP Boulanger</td><td>CAP</td></tr><tr><td>7</td><td>Titre professionnel Data Analyst</td><td>Titre Professionnel Niveau 6</td></tr><tr><td>8</td><td>BTS Négociation et digitalisation de la relation client (NDRC)</td><td>Bac+2</td></tr><tr><td>9</td><td>Diplôme d'État Auxiliaire de Puériculture (DEAP)</td><td>Diplôme d'État</td></tr><tr><td>10</td><td>Diplôme d'État Accompagnant Éducatif et Social (DEAES)</td><td>Diplôme d'État</td></tr><tr><td>11</td><td>Diplôme d'État Aide-Soignant (DEAS)</td><td>Diplôme d'État</td></tr></tbody></table></div>
+<p>L'ancien doublon « aide-soignant » (id 3) et les colonnes inutilisées <code>duree</code> et <code>modalite</code> ont été supprimés.</p>
+<h1 id="5-detail-du-code"><a class="anchor" href="#5-detail-du-code">#</a>5. Détail du code</h1>
+<h2 id="5-1-connexion-config-php"><a class="anchor" href="#5-1-connexion-config-php">#</a>5.1 Connexion – config.php</h2>
+<figure class="code"><figcaption>config.php (extrait)</figcaption><pre><code>function getDb(): PDO {
+    static $db = null;                       // une seule connexion par requête
+    if ($db !== null) return $db;
+    $fichier = __DIR__ . '/config.local.php';
+    $cfg = is_file($fichier) ? require $fichier : [ 'host' =&gt; getenv('DB_HOST') ?: 'localhost', … ];
+    $dsn = sprintf('mysql:host=%s;port=%d;dbname=%s;charset=utf8mb4', …);
+    $db = new PDO($dsn, $cfg['user'], $cfg['pass'], [
+        PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC ]);
+    return $db;
+}</code></pre></figure>
+<p>Les identifiants ne sont plus dans le code : <code>config.local.php</code> (copié depuis <code>config.example.php</code>) est ignoré par Git. À défaut, les variables d'environnement <code>DB_HOST</code>, <code>DB_PORT</code>, <code>DB_NAME</code>, <code>DB_USER</code>, <code>DB_PASS</code> sont utilisées.</p>
+<h2 id="5-2-function-optimize-php"><a class="anchor" href="#5-2-function-optimize-php">#</a>5.2 function_optimize.php</h2>
+<h3 id="plage-d-annees"><a class="anchor" href="#plage-d-annees">#</a>Plage d'années</h3>
+<p><code>easter_date()</code> ne fonctionne qu'à partir de <strong>1970</strong> et, avant PHP 8.3 (ou en 32 bits), jusqu'à <strong>2037</strong> ; ensuite jusqu'à <strong>2099</strong>. Comme le calendrier affiche 3 années d'affilée, l'année de départ doit laisser 2 années de marge.</p>
+<div class="tablewrap"><table><thead><tr><th>Fonction</th><th>Rôle</th></tr></thead><tbody><tr><td><code>anneeMin()</code></td><td>1970.</td></tr><tr><td><code>anneeMax()</code></td><td>2097 (PHP ≥ 8.3 en 64 bits) ou 2035 sinon.</td></tr><tr><td><code>lireAnnee($valeur)</code></td><td><code>filter_var(..., FILTER_VALIDATE_INT, min_range/max_range)</code> : retourne l'entier ou <code>null</code>.</td></tr><tr><td><code>paques($year)</code></td><td>Date du <strong>dimanche</strong> de Pâques (<code>easter_date</code>).</td></tr><tr><td><code>addDaysToPaques($year, $days)</code></td><td>Ajoute <code>$days</code> jours à Pâques (<code>strtotime</code>).</td></tr><tr><td><code>jours_feries($year)</code></td><td>Liste de 11 dates (voir ci-dessous).</td></tr><tr><td><code>generateCalendarAnnuaire($year, $formation)</code></td><td>Écrit le bloc <code>.calendrier</code>.</td></tr></tbody></table></div>
+<h3 id="jours-feries"><a class="anchor" href="#jours-feries">#</a>Jours fériés</h3>
+<p>Fixes (8) : 1er janvier, 1er mai, 8 mai, 14 juillet, 15 août, 1er novembre, 11 novembre, 25 décembre. Mobiles (3), calculés depuis le dimanche de Pâques :</p>
+<div class="tablewrap"><table><thead><tr><th>Férié</th><th>Décalage</th><th>2026</th><th>2027</th><th>2028</th></tr></thead><tbody><tr><td>Lundi de Pâques</td><td>+1</td><td>06/04</td><td>29/03</td><td>17/04</td></tr><tr><td>Jeudi de l'Ascension</td><td>+39</td><td>14/05</td><td>06/05</td><td>25/05</td></tr><tr><td>Lundi de Pentecôte</td><td>+50</td><td>25/05</td><td>17/05</td><td>05/06</td></tr></tbody></table></div>
+<figure class="code"><figcaption>Version corrigée</figcaption><pre><code>function jours_feries($year) {
+    return [
+        addDaysToPaques($year, 1),    // Lundi de Pâques
+        addDaysToPaques($year, 39),   // Jeudi de l'Ascension
+        addDaysToPaques($year, 50),   // Lundi de Pentecôte
+        "$year-01-01", "$year-05-01", "$year-05-08", "$year-07-14",
+        "$year-08-15", "$year-11-01", "$year-11-11", "$year-12-25",
+    ];
+}</code></pre></figure>
+<p>Le dimanche de Pâques et le dimanche de Pentecôte sont déjà des dimanches : inutile de les lister.</p>
+<h3 id="generation-du-tableau"><a class="anchor" href="#generation-du-tableau">#</a>Génération du tableau</h3>
+<ul><li><strong>Structure</strong> : 1 ligne d'en-tête (12 cellules <code>&lt;th colspan="3"&gt;</code>) puis 31 lignes ; chaque mois occupe <strong>3 colonnes</strong> (36 au total).</li><li><strong>Contenu d'un jour</strong> : initiale (<code>L M Me J V S D</code>), numéro, cellule vide (zone de note).</li><li><strong>Jours inexistants</strong> : si <code>$day &gt; cal_days_in_month(CAL_GREGORIAN, $month, $year)</code>, trois cellules <code>class='empty'</code> (les années bissextiles sont gérées).</li><li><strong>Jour de la semaine</strong> : <code>date('N', strtotime($date))</code> (1 = lundi … 7 = dimanche).</li><li><strong>Priorité des couleurs</strong> : férié (<code>holiday</code>, rouge) avant week-end (<code>weekend</code>).</li><li><strong>Titre</strong> : intitulé de la formation (échappé) et <code>Année XXXX</code> (ancre <code>id='yearXXXX'</code>).</li></ul>
+<h2 id="5-3-index-php"><a class="anchor" href="#5-3-index-php">#</a>5.3 index.php</h2>
+<ul><li>Charge <code>config.php</code> et <code>function_optimize.php</code>.</li><li>Lit les formations dans un <code>try/catch</code> : si la base est inaccessible, le détail est journalisé (<code>error_log</code>) et l'utilisateur voit « Impossible de contacter la base de données. ».</li><li>Formation présélectionnée : <code>filter_input(INPUT_GET, 'formation', FILTER_VALIDATE_INT)</code>.</li><li>Année par défaut : année demandée si valide, sinon <code>max(anneeMin(), min(date('Y'), anneeMax()))</code>.</li><li>Les attributs <code>min</code> et <code>max</code> du champ année sont ceux de <code>anneeMin()</code> / <code>anneeMax()</code> : le formulaire et le serveur utilisent la même règle.</li><li>Messages d'erreur : « Année invalide : choisissez une année entre 1970 et 2097. » ou « Formation introuvable… ».</li><li>Toutes les sorties passent par <code>htmlspecialchars()</code>.</li></ul>
+<h2 id="5-4-calendrier-php"><a class="anchor" href="#5-4-calendrier-php">#</a>5.4 calendrier.php</h2>
+<ul><li>PHP en tête de fichier, avant tout HTML : validation, requête, éventuelle redirection.</li><li><strong>CSS en ligne</strong> : <code>&lt;style&gt;&lt;?php include __DIR__ . '/styleCalendrier.css'; ?&gt;&lt;/style&gt;</code>.</li><li>Barre de navigation <code>position: sticky</code> (liens <code>index.php</code>, ancres des 3 années, <code>#download</code>).</li><li>Spinner <code>#spinner</code> masqué par défaut, affiché pendant l'export.</li></ul>
+<h2 id="5-5-selection-de-jours"><a class="anchor" href="#5-5-selection-de-jours">#</a>5.5 Sélection de jours</h2>
+<p>Chaque jour est représenté par <strong>trois cellules contiguës</strong> ; l'index de la cellule cliquée est ramené au début de son groupe (<code>index - (index % 3)</code>), puis les trois cellules sont basculées ensemble.</p>
+<figure class="code"><figcaption>Sélection (extrait)</figcaption><pre><code>document.querySelectorAll(".annuaire td:not(.empty)").forEach(cell =&gt; {   // jours inexistants exclus
+  cell.addEventListener("click", function () {
+    const cellsInRow = [...this.parentElement.children];
+    const startIndex = cellsInRow.indexOf(this) - (cellsInRow.indexOf(this) % 3);
+    const group = cellsInRow.slice(startIndex, startIndex + 3);
+    const isSelected = group.every(c =&gt; c.classList.contains("selected-day"));
+    group.forEach(c =&gt; c.classList.toggle("selected-day", !isSelected));
+  });
+});</code></pre></figure>
+<p><code>.selected-day</code> (violet) est déclarée <strong>après</strong> <code>.holiday</code> et <code>.weekend</code> dans le CSS : la sélection recouvre ces couleurs.</p>
+<h2 id="5-6-export-pdf"><a class="anchor" href="#5-6-export-pdf">#</a>5.6 Export PDF</h2>
+<div class="tablewrap"><table><thead><tr><th>Étape</th><th>Détail</th></tr></thead><tbody><tr><td>Initialisation</td><td><code>new jsPDF('l', 'mm', 'a4')</code> : paysage, millimètres, A4.</td></tr><tr><td>Capture</td><td><code>html2canvas(calendar, { scale: 2 })</code> : rendu du bloc <code>.calendrier</code> en double résolution.</td></tr><tr><td>Conversion</td><td><code>canvas.toDataURL('image/jpeg', 1.0)</code>.</td></tr><tr><td>Mise à l'échelle</td><td><code>ratio = Math.min(pageWidth/canvas.width, pageHeight/canvas.height)</code>, puis centrage.</td></tr><tr><td>Pagination</td><td><code>pdf.addPage()</code> à partir de la 2e image : un calendrier par page.</td></tr><tr><td>Sauvegarde</td><td><code>pdf.save("calendrier.pdf")</code>.</td></tr><tr><td>Erreurs</td><td><code>try/catch</code> par calendrier, <code>try/catch/finally</code> global avec <code>alert</code> et masquage du spinner.</td></tr></tbody></table></div>
+<p>Le PDF est une suite d'images (WYSIWYG) : les jours violets y figurent, mais le texte n'est pas sélectionnable.</p>
+<footer>MARTIN Robin – BTS SIO – Épreuve E5</footer>
+</main>
+<script>(function(){
+var toc=document.querySelector('.toc'),btn=document.querySelector('.toc-toggle');
+btn.addEventListener('click',function(){var o=toc.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+toc.addEventListener('click',function(e){if(e.target.tagName==='A')toc.classList.remove('open')});
+var links=[].slice.call(toc.querySelectorAll('a[href^="#"]')),map={};
+links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+if('IntersectionObserver' in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('active')});
+  var a=map[e.target.id];if(a){a.classList.add('active');a.scrollIntoView({block:'nearest'})}}})},{rootMargin:'0px 0px -75% 0px'});
+ document.querySelectorAll('main h1[id],main h2[id]').forEach(function(h){if(map[h.id])io.observe(h)});
+}})();
+</script>
+</body>
+</html>
